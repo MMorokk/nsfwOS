@@ -6,6 +6,18 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
+# Vesktop installation prompt
+shopt -s nocasematch
+read -p "Do you want to install Vesktop? (Y/n): " response
+
+if [[ "$response" =~ ^(yes|y)$ ]]; then
+    vesktop_toggle = true
+else
+    vesktop_toggle = false
+fi
+
+shopt -u nocasematch
+
 # System packages
 sudo pacman -S --noconfirm git
 sudo pacman -S --noconfirm --needed base-devel
@@ -70,14 +82,7 @@ systemctl --user enable --now hypridle.service
 # Fnott and dependencies
 paru -S --noconfirm fnott freetype2 pixman libpng
 
-# Vesktop installation prompt
-shopt -s nocasematch
-read -p "Do you want to install Vesktop? (Y/n): " response
-
-if [[ "$response" =~ ^(yes|y)$ ]]; then
-    paru -S --noconfirm vesktop
-else
-    echo "Skipping vesktop installation..."
+#Toggles
+if [$vesktop == true]; then
+    paru -S --noconfirm vesktop-bin
 fi
-
-shopt -u nocasematch
