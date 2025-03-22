@@ -4,7 +4,7 @@ It isn't really a distro, but it's an installation script that fully installs my
 
 
 
-<mark>I am not responsible for any loss of files or broken systems. Use this on your own risk.</mark>
+<mark>**I am not responsible for any loss of files or broken systems. Use this on your own risk.**</mark>
 
 ### **Basic usage:**
 
