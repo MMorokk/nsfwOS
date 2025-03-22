@@ -1,25 +1,37 @@
-#! /bin/bash
-sudo pacman -S uwsm kitty git
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git $HOME/paru
-cd $HOME/paru
-makepkg -si
-rm -rf $HOME/paru
-# Docs for eww: https://elkowar.github.io/eww/configuration.html
-paru -S xdg-desktop-portal-hyprland-git hyprpolkitagent-git qt6-wayland qt5-wayland eww-git hyprpaper-git wl-clipboard-rs-git hyprlock-git hyprsunset hyprcursor-git hyprutil-git hyprlang-git hyprland-qtutils-git aquamarine-git rofi-wayland wl-clip-persist-git
+#!/bin/bash
+
+# Ensure script is not run as root
+if [ "$EUID" -eq 0 ]; then
+    echo "Do not run this script as root. Run as a normal user."
+    exit 1
+fi
+
+# System packages
+sudo pacman -S --noconfirm uwsm kitty git
+sudo pacman -S --noconfirm --needed base-devel
+
+# Install paru (AUR helper)
+git clone https://aur.archlinux.org/paru.git "$HOME/paru"
+cd "$HOME/paru"
+makepkg -si --noconfirm
+cd ..
+rm -rf "$HOME/paru"
+
+# Hyprland and related packages
+paru -S --noconfirm xdg-desktop-portal-hyprland-git hyprpolkitagent-git qt6-wayland qt5-wayland eww-git hyprpaper-git wl-clipboard-rs-git hyprlock-git hyprsunset hyprcursor-git hyprutil-git hyprlang-git hyprland-qtutils-git aquamarine-git rofi-wayland wl-clip-persist-git
+
+# Enable hypridle service
 systemctl --user enable --now hypridle.service
 
-# Fnott docs:
-# https://codeberg.org/dnkl/fnott
-# https://codeberg.org/dnkl/fnott/src/branch/master/doc/fnott.ini.5.scd
-paru -S fnott freetype2 pixman libpng # Dependencies for fnott
+# Fnott and dependencies
+paru -S --noconfirm fnott freetype2 pixman libpng
 
-# Vesktop
+# Vesktop installation prompt
 shopt -s nocasematch
 read -p "Do you want to install Vesktop? (Y/n): " response
 if [[ "$response" =~ ^(no|n)$ ]]; then
     echo "Skipping vesktop installation."
 else
-    paru -S vesktop
+    paru -S --noconfirm vesktop
 fi
 shopt -u nocasematch
