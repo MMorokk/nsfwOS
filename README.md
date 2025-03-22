@@ -9,5 +9,5 @@ It isn't really a distro, but it's an installation script that fully installs my
 ### **Basic usage:**
 
 ```bash
-wget https://raw.githubusercontent.com/MMorokk/nsfwOS/refs/heads/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/MMorokk/nsfwOS/refs/heads/main/install.sh | bash
 ```
