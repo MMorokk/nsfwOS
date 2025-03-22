@@ -26,7 +26,7 @@ if [sudo lspci | grep -i nvidia > /dev/null]; then
 
     # Prompt for driver choice
     echo "Which NVIDIA driver would you like to use?"
-    echo "1) nvidia (proprietary driver - best performance and recommended)"
+    echo "1) nvidia (proprietary driver - best performance and recommended) [DEFAULT]"
     echo "2) nvidia-open (open source version of the proprietary driver)"
     echo "3) nouveau (fully open source driver - may have limited performance)"
 
@@ -37,7 +37,7 @@ if [sudo lspci | grep -i nvidia > /dev/null]; then
         1)
             echo "You've selected the proprietary NVIDIA driver."
             echo "To install, run:"
-            paru -S --noconfirm nvidia-dkms nvidia-utils nvidia-settings
+
             ;;
         2)
             echo "You've selected the NVIDIA open source driver."
@@ -50,8 +50,8 @@ if [sudo lspci | grep -i nvidia > /dev/null]; then
             paru -S --noconfirm xf86-video-nouveau mesa
             ;;
         *)
-            echo "Invalid choice. Exiting."
-            exit 1
+            echo "Installing recommended nvidia (proprietary driver - best performance and recommended)"
+            paru -S --noconfirm nvidia-dkms nvidia-utils nvidia-settings
             ;;
     esac
 
@@ -77,7 +77,7 @@ paru -S --noconfirm fnott freetype2 pixman libpng
 shopt -s nocasematch
 read -p "Do you want to install Vesktop? (Y/n): " response
 
-if [ "$response" =~ ^(yes|y)$ ]; then
+if [[ "$response" =~ ^(yes|y)$ ]]; then
     paru -S --noconfirm vesktop
 else
     echo "Skipping vesktop installation..."
