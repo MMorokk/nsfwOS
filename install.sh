@@ -18,7 +18,7 @@ cd ..
 rm -rf "$HOME/paru"
 
 # Hyprland and related packages
-paru -S --noconfirm xdg-desktop-portal-hyprland-git hyprpolkitagent-git qt6-wayland qt5-wayland eww-git hyprpaper-git wl-clipboard-rs-git hyprlock-git hyprsunset hyprcursor-git hyprutil-git hyprlang-git hyprland-qtutils-git aquamarine-git rofi-wayland wl-clip-persist-git
+paru -S --noconfirm xdg-desktop-portal-hyprland-git hyprpolkitagent-git qt6-wayland qt5-wayland eww-git hyprpaper-git wl-clipboard-rs-git hyprlock-git hyprsunset hyprcursor-git hyprutil-git hyprlang-git hyprland-qtutils-git aquamarine-git rofi-wayland wl-clip-persist-git hypridle-git nwg-look qt5ct qt6ct qt4ct
 
 # Enable hypridle service
 systemctl --user enable --now hypridle.service
