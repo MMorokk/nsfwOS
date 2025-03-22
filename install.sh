@@ -36,17 +36,14 @@ if [sudo lspci | grep -i nvidia > /dev/null]; then
     case "$choice" in
         1)
             echo "You've selected the proprietary NVIDIA driver."
-            echo "To install, run:"
-
+            paru -S --noconfirm nvidia-dkms nvidia-utils nvidia-settings
             ;;
         2)
             echo "You've selected the NVIDIA open source driver."
-            echo "To install, run:"
             paru -S --noconfirm nvidia-open-dkms nvidia-utils nvidia-settings
             ;;
         3)
             echo "You've selected the Nouveau driver."
-            echo "To install, run:"
             paru -S --noconfirm xf86-video-nouveau mesa
             ;;
         *)
