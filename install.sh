@@ -29,9 +29,11 @@ paru -S --noconfirm fnott freetype2 pixman libpng
 # Vesktop installation prompt
 shopt -s nocasematch
 read -p "Do you want to install Vesktop? (Y/n): " response
-if [[ "$response" =~ ^(no|n)$ ]]; then
-    echo "Skipping vesktop installation."
-else
+
+if [[ "$response" =~ ^(yes|y)$ ]]; then
     paru -S --noconfirm vesktop
+else
+    echo "Skipping vesktop installation."
 fi
+
 shopt -u nocasematch
