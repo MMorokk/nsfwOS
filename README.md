@@ -11,7 +11,7 @@ It isn't really a distro, but it's an installation script that fully installs my
 <mark>**WARNING:**</mark>
 
 **DO NOT install it on your comlete installations of arch**
-    *This script meant to be installed on fresh system*
+*This script meant to be installed on fresh system*
 
 ---
 
