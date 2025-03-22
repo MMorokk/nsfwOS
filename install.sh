@@ -112,7 +112,8 @@ paru -S --noconfirm ttf-cm-unicode \
                     nwg-look \
                     qt5ct \
                     qt6ct \
-                    qt4ct
+                    qt4ct \
+                    luarocks
 
 
 # Enable hypridle service
@@ -120,6 +121,8 @@ systemctl --user enable --now hypridle.service
 
 # Fnott and dependencies
 paru -S --noconfirm fnott freetype2 pixman libpng
+
+# some code here
 
 #Toggles
 if [$vesktop == true]; then
