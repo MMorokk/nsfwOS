@@ -71,6 +71,7 @@ else
     echo "      If you have NVIDIA graphics and still see this message please submit an issue on github."
     echo "Your graphics hardware:"
     lspci | grep -E 'VGA|3D|Display' | sed 's/^[^:]*: //'
+    sleep 5
 fi
 
 # Hyprland and related packages
@@ -113,14 +114,17 @@ paru -S --noconfirm ttf-cm-unicode \
                     qt5ct \
                     qt6ct \
                     qt4ct \
-                    luarocks
+                    luarocks \
+                    unzip \
+                    imagemagick \
+                    fnott \
+                    freetype2 \
+                    pixman \
+                    libpng
 
 
 # Enable hypridle service
 systemctl --user enable --now hypridle.service
-
-# Fnott and dependencies
-paru -S --noconfirm fnott freetype2 pixman libpng
 
 # some code here
 
@@ -128,6 +132,7 @@ paru -S --noconfirm fnott freetype2 pixman libpng
 if [$vesktop == true]; then
     paru -S --noconfirm vesktop-bin
 fi
+
+# Dotfiles installation
 git clone https://github.com/MMorokk/.dotfiles $HOME/.dotfiles
-cd $HOME/.dotfiles
-bash install.sh
+bash $HOME/.dotfiles/install.sh
