@@ -126,6 +126,13 @@ paru -S --noconfirm ttf-cm-unicode \
 # Enable hypridle service
 systemctl --user enable --now hypridle.service
 
+# Hyprland plugins
+hyprpm add https://github.com/pyt0xic/hyprfocus
+hyprpm enable hyprfocus
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm enable csgo-vulkan-fix
+hyprpm reload
+
 # some code here
 
 #Toggles
