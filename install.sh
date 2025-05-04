@@ -74,7 +74,7 @@ else
     sleep 5
 fi
 
-# Hyprland and related packages
+# Install everything
 paru -S --noconfirm ttf-cm-unicode \
                     otf-cm-unicode \
                     otf-latin-modern \
@@ -120,11 +120,18 @@ paru -S --noconfirm ttf-cm-unicode \
                     fnott \
                     freetype2 \
                     pixman \
-                    libpng
+                    libpng \
+                    pipewire \
+                    lib32-pipewire \
+                    wireplumber \
+                    hyprland-qt-support-git
+
 
 
 # Enable hypridle service
 systemctl --user enable --now hypridle.service
+# Enable polkit agent
+systemctl --user enable --now hyprpolkitagent.service
 
 # Hyprland plugins
 hyprpm add https://github.com/pyt0xic/hyprfocus
