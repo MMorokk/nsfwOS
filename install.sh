@@ -163,7 +163,7 @@ paru -S --noconfirm ttf-cm-unicode \
                     nerd-fonts
 
 printf "${Cyan}Installing hyprland and related packages...${Color_Off}\n"
-paru -S --noconfirm uwsm \
+paru -S uwsm \
                     kitty \
                     hyprland-git \
                     xdg-desktop-portal-hyprland-git \
