@@ -164,31 +164,32 @@ paru -S --noconfirm ttf-cm-unicode \
 
 printf "${Cyan}Installing hyprland and related packages...${Color_Off}\n"
 paru -S uwsm \
-    kitty \
-    hyprland-git \
-    xdg-desktop-portal-hyprland-git \
-    hyprpolkitagent-git \
-    qt6-wayland \
-    qt5-wayland \
-    eww-git \
-    hyprpaper-git \
-    wl-clipboard-rs-git \
-    hyprlock-git \
-    hyprsunset \
-    hyprcursor-git \
-    hyprutils-git \
-    hyprlang-git \
-    hyprland-qtutils-git \
-    aquamarine-git \
-    rofi-wayland \
-    wl-clip-persist-git \
-    hypridle-git \
-    nwg-look \
-    qt5ct \
-    qt6ct \
-    qt4 \
-    fnott \
-    hyprland-qt-support-git
+        kitty \
+        hyprland-git \
+        xdg-desktop-portal-hyprland-git \
+        hyprpolkitagent-git \
+        qt6-wayland \
+        qt5-wayland \
+        eww-git \
+        hyprpaper-git \
+        wl-clipboard-rs-git \
+        hyprlock-git \
+        hyprsunset \
+        hyprcursor-git \
+        hyprutils-git \
+        hyprlang-git \
+        hyprland-qtutils-git \
+        aquamarine-git \
+        rofi-wayland \
+        wl-clip-persist-git \
+        hypridle-git \
+        nwg-look \
+        qt5ct \
+        qt6ct \
+        qt4 \
+        fnott \
+        hyprland-qt-support-git \
+        sddm-git
 
 printf "${Cyan}Making sure pipewire installed properly...${Color_Off}\n"
 paru -S --noconfirm pipewire \
