@@ -84,7 +84,7 @@ sudo pacman -S --noconfirm git
 sudo pacman -S --noconfirm --needed base-devel
 
 # Install paru (AUR helper) if not already installed
-if ! command -v paru &> /dev/null; then
+if ! which paru > /dev/null 2>&1; then
     echo "Installing paru..."
     git clone https://aur.archlinux.org/paru.git "$HOME/paru"
     cd "$HOME/paru"
@@ -93,7 +93,7 @@ if ! command -v paru &> /dev/null; then
         printf "${BRed}ERROR WHILE INSTALLING PARU${Color_Off}"
         exit 1
     fi
-    cd ..
+    cd "$OLDPWD"
     rm -rf "$HOME/paru"
 else
     echo "paru is already installed."
