@@ -83,16 +83,22 @@ fi
 sudo pacman -S --noconfirm git
 sudo pacman -S --noconfirm --needed base-devel
 
-# Install paru (AUR helper)
-git clone https://aur.archlinux.org/paru.git "$HOME/paru"
-cd "$HOME/paru"
-makepkg -si --noconfirm
-if [[ $? -ne 0 ]] ; then
-    printf "${BRed}ERROR WHILE INSTALLING PARU${Color_Off}"
-    exit 1
+# Install paru (AUR helper) if not already installed
+if ! command -v paru &> /dev/null; then
+    echo "Installing paru..."
+    git clone https://aur.archlinux.org/paru.git "$HOME/paru"
+    cd "$HOME/paru"
+    makepkg -si --noconfirm
+    if [[ $? -ne 0 ]]; then
+        printf "${BRed}ERROR WHILE INSTALLING PARU${Color_Off}"
+        exit 1
+    fi
+    cd ..
+    rm -rf "$HOME/paru"
+else
+    echo "paru is already installed."
 fi
-cd ..
-rm -rf "$HOME/paru"
+
 
 # Check for NVIDIA GPU
 if sudo lspci | grep -i nvidia > /dev/null; then
