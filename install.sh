@@ -95,7 +95,7 @@ cd ..
 rm -rf "$HOME/paru"
 
 # Check for NVIDIA GPU
-if [sudo lspci | grep -i nvidia > /dev/null]; then
+if sudo lspci | grep -i nvidia > /dev/null; then
     echo "NVIDIA graphics card detected:"
     nvidia_info=$(lspci | grep -i nvidia | head -n 1)
     echo "$nvidia_info"
@@ -139,7 +139,7 @@ else
     sleep 5
 fi
 
-printf "${Cyan}Installing fonts...${Color_Off}"
+printf "${Cyan}Installing fonts...${Color_Off}\n"
 paru -S --noconfirm ttf-cm-unicode \
                     otf-cm-unicode \
                     otf-latin-modern \
@@ -156,7 +156,7 @@ paru -S --noconfirm ttf-cm-unicode \
                     noto-fonts-extra \
                     nerd-fonts
 
-printf "${Cyan}Installing hyprland and related packages...${Color_Off}"
+printf "${Cyan}Installing hyprland and related packages...${Color_Off}\n"
 paru -S --noconfirm uwsm \
                     kitty \
                     hyprland-git \
@@ -180,16 +180,16 @@ paru -S --noconfirm uwsm \
                     nwg-look \
                     qt5ct \
                     qt6ct \
-                    qt4ct \
+                    qt4 \
                     fnott \
                     hyprland-qt-support-git
 
-printf "${Cyan}Making sure pipewire installed properly...${Color_Off}"
+printf "${Cyan}Making sure pipewire installed properly...${Color_Off}\n"
 paru -S --noconfirm pipewire \
                     lib32-pipewire \
                     wireplumber
 
-printf "${Cyan}Neovim related stuff...${Color_Off}"
+printf "${Cyan}Neovim related stuff...${Color_Off}\n"
 paru -S --noconfirm luarocks \
                     unzip \
                     imagemagick \
