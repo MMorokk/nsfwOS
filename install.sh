@@ -132,14 +132,14 @@ if [sudo lspci | grep -i nvidia > /dev/null]; then
     echo ""
     echo "After installation, reboot your system for changes to take effect."
 else
-    echo -e "${Blue}No NVIDIA graphics card was detected on this system.${BGreen}(Its good)${Color_Off}"
+    echo -e "${Cyan}No NVIDIA graphics card was detected on this system.${BGreen}(Its good)${Color_Off}"
     echo -e "      ${Red}If you have NVIDIA graphics and still see this message please submit an issue on github.${Color_Off}"
     echo "Your graphics hardware:"
     lspci | grep -E 'VGA|3D|Display' | sed 's/^[^:]*: //'
     sleep 5
 fi
 
-# Install everything
+printf "${Cyan}Installing fonts...${Color_Off}"
 paru -S --noconfirm ttf-cm-unicode \
                     otf-cm-unicode \
                     otf-latin-modern \
@@ -154,8 +154,10 @@ paru -S --noconfirm ttf-cm-unicode \
                     noto-fonts-cjk \
                     noto-fonts-emoji \
                     noto-fonts-extra \
-                    nerd-fonts \
-                    uwsm \
+                    nerd-fonts
+
+printf "${Cyan}Installing hyprland and related packages...${Color_Off}"
+paru -S --noconfirm uwsm \
                     kitty \
                     hyprland-git \
                     xdg-desktop-portal-hyprland-git \
@@ -168,7 +170,7 @@ paru -S --noconfirm ttf-cm-unicode \
                     hyprlock-git \
                     hyprsunset \
                     hyprcursor-git \
-                    hyprutil-git \
+                    hyprutils-git \
                     hyprlang-git \
                     hyprland-qtutils-git \
                     aquamarine-git \
@@ -179,19 +181,21 @@ paru -S --noconfirm ttf-cm-unicode \
                     qt5ct \
                     qt6ct \
                     qt4ct \
-                    luarocks \
-                    unzip \
-                    imagemagick \
                     fnott \
-                    freetype2 \
-                    pixman \
-                    libpng \
-                    pipewire \
-                    lib32-pipewire \
-                    wireplumber \
                     hyprland-qt-support-git
 
+printf "${Cyan}Making sure pipewire installed properly...${Color_Off}"
+paru -S --noconfirm pipewire \
+                    lib32-pipewire \
+                    wireplumber
 
+printf "${Cyan}Neovim related stuff...${Color_Off}"
+paru -S --noconfirm luarocks \
+                    unzip \
+                    imagemagick \
+                    freetype2 \
+                    pixman \
+                    libpng
 
 # Enable hypridle service
 systemctl --user enable --now hypridle.service
@@ -206,11 +210,6 @@ hyprpm enable csgo-vulkan-fix
 hyprpm reload
 
 # some code here
-
-#Toggles
-if [$vesktop == true]; then
-    paru -S --noconfirm vesktop-bin
-fi
 
 # Dotfiles installation
 git clone https://github.com/MMorokk/.dotfiles $HOME/.dotfiles
