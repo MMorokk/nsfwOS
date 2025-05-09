@@ -189,7 +189,11 @@ paru -S uwsm \
         qt4 \
         fnott \
         hyprland-qt-support-git \
-        sddm-git
+        sddm-git \
+        catppuccin-sddm-theme-frappe \
+        qt6-svg \
+        qt6-declarative \
+        qt5-quickcontrols2
 
 printf "${Cyan}Making sure pipewire installed properly...${Color_Off}\n"
 paru -S --noconfirm pipewire \
