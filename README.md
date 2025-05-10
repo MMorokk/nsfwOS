@@ -30,7 +30,7 @@ The script assumes that you just completed `archinstall` with:
   **Anything other than those parameners WILL NOT WORK**
 
 ## Basic usage:
-
+**The project doesn't work properly yet!**
 ```bash
 curl -sSL https://raw.githubusercontent.com/MMorokk/nsfwOS/refs/heads/main/install.sh | bash
 ```
