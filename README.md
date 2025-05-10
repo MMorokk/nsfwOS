@@ -5,10 +5,11 @@ It isn't really a distro, but it's an installation script that fully installs my
 <mark>**I am not responsible for any loss of files or broken systems. Use this on your own risk.**</mark>
 
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Preparations:)](https://git.io/typing-svg)
+[![Preparations:](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=2000&pause=2000&color=00C4F7&vCenter=true&width=435&lines=Preparations%3A)](https://git.io/typing-svg)
 ---
+ 
 
-<mark>**WARNING:**</mark>
+[![WARNING!](https://readme-typing-svg.demolab.com?font=Barrio&duration=2000&pause=2000&color=F70000&width=435&lines=Warning!)](https://git.io/typing-svg)
 
 **DO NOT install it on your comlete installations of arch**
 *This script meant to be installed on fresh system*
@@ -29,7 +30,7 @@ The script assumes that you just completed `archinstall` with:
 
   **Anything other than those parameners WILL NOT WORK**
 
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Basic+usage:)](https://git.io/typing-svg)
+[![Basic usage:](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=30&duration=2000&pause=2000&color=FFFF00&vCenter=true&width=435&lines=Basic+usage%3A)](https://git.io/typing-svg)
 **The project doesn't work properly yet!**
 ```bash
 curl -sSL https://raw.githubusercontent.com/MMorokk/nsfwOS/refs/heads/main/install.sh | bash
