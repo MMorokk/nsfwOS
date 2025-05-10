@@ -4,8 +4,8 @@ It isn't really a distro, but it's an installation script that fully installs my
 
 <mark>**I am not responsible for any loss of files or broken systems. Use this on your own risk.**</mark>
 
-## Preparations:
 
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Preparations:)](https://git.io/typing-svg)
 ---
 
 <mark>**WARNING:**</mark>
@@ -29,7 +29,7 @@ The script assumes that you just completed `archinstall` with:
 
   **Anything other than those parameners WILL NOT WORK**
 
-## Basic usage:
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Basic+usage:)](https://git.io/typing-svg)
 **The project doesn't work properly yet!**
 ```bash
 curl -sSL https://raw.githubusercontent.com/MMorokk/nsfwOS/refs/heads/main/install.sh | bash
